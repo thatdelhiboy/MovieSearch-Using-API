@@ -19,22 +19,16 @@ app.get('/searchResult', function (req, res) {
     /// if user enter 2 or 3 word search following query will add + in place of spaces i.e - caption amarica wil become caption+amarica
     var str = query;
     var replaced = str.split(' ').join('+');
-    console.log(replaced)
-
-
-
+  
     var url="http://www.omdbapi.com/?apikey=thewdb&s="+replaced;
     console.log(url)
     request(url, (error, response, body)=> {
-        // eval(require('locus'))
         if (!error && response.statusCode == 200) {
             var parsedData = JSON.parse(body);
             var ttid= parsedData.Search["0"]["imdbID"];
             var tturl="https://www.imdb.com/title/"+ttid;
             res.render("searchResult", {parsedData:parsedData, query:query, tturl:tturl});
-            // console.log(parsedData);
-            console.log(parsedData);
-            console.log(query)
+            console.log("Someone searched for:-" +query)
         }
     });
 });
