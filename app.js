@@ -29,8 +29,12 @@ app.get('/searchResult', function (req, res) {
         // eval(require('locus'))
         if (!error && response.statusCode == 200) {
             var parsedData = JSON.parse(body);
-            res.render("searchResult", {parsedData:parsedData});
+            var ttid= parsedData.Search["0"]["imdbID"];
+            var tturl="https://www.imdb.com/title/"+ttid;
+            res.render("searchResult", {parsedData:parsedData, query:query, tturl:tturl});
             // console.log(parsedData);
+            console.log(parsedData);
+            console.log(query)
         }
     });
 });

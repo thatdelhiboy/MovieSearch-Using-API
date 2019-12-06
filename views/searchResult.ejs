@@ -1,13 +1,23 @@
 <%- include("partials/header.ejs") %>
-<h1>Result page</h1>
+<h1>Search Result for :-<%=query%></h1>
 <div class="d-flex flex-column bd-highlight mb-3">
 
-<%parsedData["Search"].forEach(element => {%>
-    <img class="imagePosters" src="<%= element["Poster"]%>" alt="">
-    <li  class="p-2 bd-highlight" ><strong><%= element["Title"]%></strong> :- <%=element["Year"]%></li>
-<%});%>
-</div>
+    <div class="row">
+        <%parsedData["Search"].forEach(element => {%>
 
+        <div class="card col-3" style="width: 18rem;">
+        <img src="<%= element["Poster"]%>" class="card-img-top" alt="Image Not Available">
+        <div class="card-body">
+            <h5 class="card-title"><%= element["Title"]%></h5>
+            <h6 class="card-title">Released in <%=element["Year"]%></h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="<%=tturl%>" class="btn btn-primary">know more</a>
+        </div>
+        </div>
+
+        <%});%>
+    </div>
+</div>
 <a href="/" class="btn btn-success">Search Again</a>
 <%- include("partials/footer.ejs") %>
 
