@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+<h1>Result page</h1>
+<div class="d-flex flex-column bd-highlight mb-3">
+
+<%parsedData["Search"].forEach(element => {%>
+    <img class="imagePosters" src="<%= element["Poster"]%>" alt="">
+    <li  class="p-2 bd-highlight" ><strong><%= element["Title"]%></strong> :- <%=element["Year"]%></li>
+<%});%>
+</div>
+
+<a href="/" class="btn btn-success">Search Again</a>
+<%- include("partials/footer.ejs") %>
+

@@ -1,0 +1,32 @@
+body{
+    background-color: #e9ecef;
+}
+
+button.btn.btn-success.btn-lg{
+    display: block;
+    margin: 20px auto;
+}
+
+#searchlogo{
+    height: 1rem;
+    width: 1rem;
+}
+
+#mainSearchpageimage{
+    display: block;
+    width: 40vh;
+    height: 40vh;
+    margin: auto auto;
+}
+
+.display-4{
+    display: block;
+    margin: auto auto;
+    text-align: center;
+}
+
+.imagePosters{
+    display: block;
+    margin: auto auto;
+    width: max-content;
+}
