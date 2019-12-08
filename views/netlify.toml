@@ -1,5 +1,0 @@
-[build]
-  command = "npm run express"
-  command = "npm run ejs"
-  command = "npm run body-parser"
-  command = "npm run request"
